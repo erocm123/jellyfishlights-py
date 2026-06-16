@@ -8,6 +8,8 @@ To install:
 pip install jellyfishlights-py
 ```
 
+> ⚠️ **Warning:** Some data managed through this library (e.g. zone configurations, patterns, and schedules) is liable to be overwritten by the JellyFish cloud service if the controller is also connected to it. Changes you make locally may be reverted without warning when the controller syncs with the cloud.
+
 ## Current capabalilities
 
 - Connect to a local JellyFish Lighting controller over websocket
