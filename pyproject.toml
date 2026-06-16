@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jellyfishlights-py"
+version = "0.8.1"
+description = "Python library for controlling Jellyfish Lights via the local network."
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [
+    { name = "Jonathan Nielsen", email = "jonathann@jellyfishlighting.com" },
+]
+dependencies = [
+    "websocket-client",
+]
+
+[project.urls]
+Homepage = "https://github.com/vinenoobjelly/jellyfishlights-py"
+Issues = "https://github.com/vinenoobjelly/jellyfishlights-py/issues"
+
+[tool.setuptools.packages.find]
+include = ["jellyfishlightspy*"]
+exclude = ["tests*"]
