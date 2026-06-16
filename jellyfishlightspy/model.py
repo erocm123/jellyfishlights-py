@@ -73,12 +73,22 @@ class PatternConfig(ModelBase):
 
 
 class ZoneState(ModelBase):
-    def __init__(self, state: int, zoneName: List[str], file: Optional[str]=None, id: Optional[str]=None, data: Optional[PatternConfig]=None):
+    def __init__(
+        self,
+        state: int,
+        zoneName: List[str],
+        file: Optional[str]=None,
+        id: Optional[str]=None,
+        data: Optional[PatternConfig]=None,
+        activatedBy: Optional[str]=None,
+        **kwargs
+    ):
         self.state = state
         self.zoneName = zoneName
         self.file = file
         self.id = id
         self.data = data
+        self.activatedBy = activatedBy
 
     @property
     def is_on(self) -> bool:

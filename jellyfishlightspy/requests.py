@@ -92,10 +92,23 @@ class SetZoneConfigRequest(SetRequest):
 
 
 class SetZoneStateRequest(SetRequest):
-    def __init__(self, state: int, zoneName: List[str], file: str="", id: str="", data: Optional[PatternConfig]=None):
+    def __init__(
+        self,
+        state: int,
+        zoneName: List[str],
+        file: str = "",
+        id: str = "",
+        data: Optional[PatternConfig] = None,
+    ):
         super().__init__()
-        self.runPattern = ZoneState(state=state, zoneName=zoneName, file=file, id=id, data=data)
-
+        self.runPattern = ZoneState(
+            state=state,
+            zoneName=zoneName,
+            file=file,
+            id=id,
+            data=data,
+            activatedBy="network_command",
+        )
 
 class SetPatternConfigRequest(SetRequest):
     def __init__(self, pattern: Pattern, jsonData: PatternConfig):
